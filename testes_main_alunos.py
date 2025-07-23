@@ -52,7 +52,7 @@ class TestObterResposta(unittest.TestCase):
     def teste_resposta_padrao(self):
         """Teste de resposta padrão"""
         texto_aleatorio = "xyz123"
-        self.assertEqual(obter_resposta(texto_aleatorio), f"Desculpa, nãod entendi a questão! {texto_aleatorio}")
+        self.assertEqual(obter_resposta(texto_aleatorio), f"Desculpa, não entendi a questão! {texto_aleatorio}")
         texto_aleatorio2 = "teste123" # fazer outro teste de texto aleatório
         texto_aleatorio3 = "indisposição" # fazer outro teste de texto aleatório
         texto_aleatorio4 = "sintomas de indisposição" # fazer outro teste de texto aleatório
