@@ -46,15 +46,21 @@ class TestObterResposta(unittest.TestCase):
     def teste_ia(self):
         """Teste de respostas sobre inteligência artificial - 3 testes"""
         self.assertEqual(obter_resposta("ia"), "A inteligência artificial é um campo da ciência da computação que se concentra na criação de sistemas que podem realizar tarefas que normalmente requerem inteligência humana.")
-
+        self.assertEqual(obter_resposta("machine learning"), "O aprendizado de máquina é um subcampo da inteligência artificial que se concentra no desenvolvimento de algoritmos que permitem que os computadores aprendam com os dados.")
+        self.assertEqual(obter_resposta("deep learning"), "O aprendizado profundo é uma subárea do aprendizado de máquina que utiliza redes neurais profundas para modelar dados complexos.")
+        
     def teste_saude(self):
         """Teste de respostas sobre saúde - 3 testes"""
         self.assertEqual(obter_resposta("saúde"), "A saúde é um estado de completo bem-estar físico, mental e social, e não apenas a ausência de doenças ou enfermidades.")
-
+        self.assertEqual(obter_resposta("problemas saúde"), "Problemas de saúde podem variar de leves a graves e podem afetar qualquer parte do corpo.")
+        self.assertEqual(obter_resposta("sintomas"), 'Sintomas são sinais ou indicações de uma condição médica ou doença.')
+        
     def teste_indisposicao(self):
         """Teste de respostas sobre indisposição - 3 testes"""
         self.assertEqual(obter_resposta("indisposição"), "Sintomas de indisposição podem incluir fadiga, dor de cabeça, náusea e outros sinais de que algo não está bem.")
-
+        self.assertEqual(obter_resposta("sintomas de indisposição"), "Sintomas de indisposição podem incluir fadiga, dor de cabeça, náusea e outros sinais de que algo não está bem.")
+        self.assertEqual(obter_resposta("estou com sintomas de indisposição"), "Sintomas de indisposição podem incluir fadiga, dor de cabeça, náusea e outros sinais de que algo não está bem.")
+    
     def teste_horas_e_data(self):
         """Teste de respostas a perguntas sobre horas e data"""
         hora_atual = datetime.now().strftime("%H:%M")
@@ -67,9 +73,12 @@ class TestObterResposta(unittest.TestCase):
         """Teste de resposta padrão"""
         texto_aleatorio = "xyz123"
         self.assertEqual(obter_resposta(texto_aleatorio), f"Desculpa, não entendi a questão! {texto_aleatorio}")
-        texto_aleatorio2 = "teste123" # fazer outro teste de texto aleatório
-        texto_aleatorio3 = "indisposição" # fazer outro teste de texto aleatório
-        texto_aleatorio4 = "sintomas de indisposição" # fazer outro teste de texto aleatório
+        texto_aleatorio2 = "Sinto um iquietude, que será?" # fazer outro teste de texto aleatório
+        self.assertEqual(obter_resposta(texto_aleatorio2), f"Desculpa, não entendi a questão! {texto_aleatorio2}")
+        texto_aleatorio3 = "Se daqui ali é assim, como é dali aqui?" # fazer outro teste de texto aleatório
+        self.assertEqual(obter_resposta(texto_aleatorio3), f"Desculpa, não entendi a questão! {texto_aleatorio3}")
+        texto_aleatorio4 = "Também estás apaixonado por mim?" # fazer outro teste de texto aleatório
+        self.assertEqual(obter_resposta(texto_aleatorio4), f"Desculpa, não entendi a questão! {texto_aleatorio4}")
 
 
 if __name__ == '__main__':
