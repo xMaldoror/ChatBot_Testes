@@ -7,15 +7,22 @@ class TestObterResposta(unittest.TestCase):
     def teste_saudacoes(self):
         """Teste de respostas a saudações - 3 testes"""
         self.assertEqual(obter_resposta("olá"), "Olá tudo bem!")
-
+        self.assertEqual(obter_resposta('boa tarde'), 'Olá tudo bem!')
+        self.assertEqual(obter_resposta('bom dia'), 'Olá tudo bem!')
+        
     def teste_perguntas_simples(self):
         """Teste de respostas a perguntas simples - 4 testes"""
         self.assertEqual(obter_resposta("como estás"), "Estou bem, obrigado!")
+        self.assertEqual(obter_resposta('capital de portugal'), "Lisboa")
+        self.assertEqual(obter_resposta('como te chamas'), 'O meu nome é: Bot :)')
+        self.assertEqual(obter_resposta('tempo'), 'Está um dia de sol!')
 
     def teste_despedidas(self):
         """Teste de respostas a despedidas - 3 testes"""
         self.assertEqual(obter_resposta("bye"), "Gostei de falar contigo! Até breve...")
-
+        self.assertEqual(obter_resposta('adeus'), 'Gostei de falar contigo! Até breve...')
+        self.assertEqual(obter_resposta('tchau'), 'Gostei de falar contigo! Até breve...')
+        
     def teste_historia_portugal(self):
         """Teste de respostas sobre história de Portugal - 1 teste"""
         self.assertEqual(obter_resposta('historia de portugal'), 'Portugal tem uma rica história...')
@@ -27,10 +34,14 @@ class TestObterResposta(unittest.TestCase):
     def teste_programar(self):
         """Teste de respostas sobre programar - 2 testes"""
         self.assertEqual(obter_resposta('sabes programar'), 'Sim, posso ajudar com programação!')
+        self.assertEqual(obter_resposta('programar'), 'Programar é o processo de escrever código para criar software...')
     
     def teste_desenvolvimento(self):
         """Teste de respostas sobre desenvolvimento - 4 testes"""
         self.assertEqual(obter_resposta("desenvolvimento web"), "O desenvolvimento web envolve a criação de sites e aplicações web...")
+        self.assertEqual(obter_resposta("desenvolvimento de software"), "O desenvolvimento de software é o processo de criar programas e aplicações...")
+        self.assertEqual(obter_resposta("desenvolvimento de jogos"), "O desenvolvimento de jogos é a criação de jogos eletrônicos...")
+        self.assertEqual(obter_resposta("desenvolvimento de aplicativos móveis"), "O desenvolvimento de aplicativos móveis é a criação de aplicativos para dispositivos móveis...")
 
     def teste_ia(self):
         """Teste de respostas sobre inteligência artificial - 3 testes"""
